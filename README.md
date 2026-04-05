@@ -32,6 +32,39 @@ A comprehensive backend system for managing financial records with role-based ac
 - Business logic validation
 - Error handling with meaningful messages
 
+File Structure
+Project01/
+├── server.js                 # Main entry point
+├── package.json             # Dependencies (Express, Mongoose, JWT, Joi, etc.)
+├── .env                     # Environment configuration
+├── .env.example             # Environment template
+├── README.md                # Complete API documentation
+├── config/
+│   └── database.js          # MongoDB connection setup
+├── models/
+│   ├── User.js              # User schema with password hashing
+│   ├── Role.js              # Role and permissions schema
+│   └── FinancialRecord.js   # Financial record schema
+├── controllers/
+│   ├── authController.js    # Authentication logic
+│   ├── userController.js    # User management
+│   ├── recordController.js  # Records CRUD
+│   └── dashboardController.js # Analytics queries
+├── middleware/
+│   ├── authMiddleware.js    # JWT verification
+│   ├── authorizationMiddleware.js # Permission checks
+│   └── errorHandler.js      # Global error handling
+├── routes/
+│   ├── authRoutes.js        # Auth endpoints
+│   ├── userRoutes.js        # User management endpoints
+│   ├── recordRoutes.js      # Records CRUD endpoints
+│   └── dashboardRoutes.js   # Dashboard analytics endpoints
+├── validators/
+│   ├── authValidator.js     # Auth input validation
+│   └── recordValidator.js   # Records input validation
+└── utils/
+    └── errors.js            # Custom error classes
+
 ## Prerequisites
 
 - Node.js (v14 or higher)
